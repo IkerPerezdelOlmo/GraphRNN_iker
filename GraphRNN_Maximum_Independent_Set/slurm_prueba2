@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH --job-name=GraphRNN_MIS_P3_500_prueba
+#SBATCH --output=./emaitzak/prueba_%j.txt
+#SBATCH --error=./emaitzak/prueba_%j_error.txt
+
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --threads-per-core=1
+# #SBATCH --ntasks-per-core=2
+
+#SBATCH --mem-per-cpu=16G
+
+#SBATCH --partition=GPU
+#SBATCH --gpus=1
+
+#SBATCH --array=1-1  
+
+
+dataset='USA-road_d_500_N100_NY'
+let maximumEpochs=8000
+
+
+# Create array of parameter combinations
+
+let cont=1
+
+# Your nested loops for parameter combinations
+for data in $dataset; do
+    params[$cont]="--datasets ${data} --maximumEpochs ${maximumEpochs}"
+
+    echo ${params[$cont]}
+    let cont=$cont+1;
+done
+
+echo ${cont} ${SLURM_ARRAY_TASK_ID}
+
+# Execute the program with parameters from array
+bnd -exec python3 prueba.py ${params[${SLURM_ARRAY_TASK_ID}]}
