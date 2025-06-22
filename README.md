@@ -9,7 +9,7 @@ conda install pytorch torchvision cuda90 -c pytorch
 ```
 Then install the other dependencies.
 ```bash
-pip install -r requirements.txt
+pip install -r cleaned_requirements.txt
 ```
 
 ## Test run
