@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Instance generation for MIS problem using GraphRNN
 =======
 
