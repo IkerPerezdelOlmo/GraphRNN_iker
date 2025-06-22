@@ -32,14 +32,6 @@ For example, `args.cuda` controls which GPU is used to train the model, and `arg
 specifies which dataset is used to train the generative model. See the documentation in `args.py`
 for more detailed descriptions of all fields.
 
-## Outputs
-There are several different types of outputs, each saved into a different directory under a path prefix. The path prefix is set at `args.dir_input`. Suppose that this field is set to `./`:
-* `./graphs` contains the pickle files of training, test and generated graphs. Each contains a list
-  of networkx object.
-* `./eval_results` contains the evaluation of MMD scores in txt format.
-* `./model_save` stores the model checkpoints
-* `./nll` saves the log-likelihood for generated graphs as sequences.
-* `./figures` is used to save visualizations (see Visualization of graphs section).
 
 ## Evaluation
 The evaluation is done in `evaluateIker.py`, where user can choose which settings to evaluate.
