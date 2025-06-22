@@ -59,11 +59,6 @@ Arguments specific to evaluation is specified in class
 datasets that are already trained, by setting args.graph_type to each of the datasets and running
 `python main_iker.py`.
 
-## Visualization of graphs
-The training, testing and generated graphs are saved at 'graphs/'.
-One can visualize the generated graph using the function `utils.load_graph_list`, which loads the
-list of graphs from the pickle file, and `util.draw_graph_list`, which plots the graph using
-networkx. 
 
 
 ## Misc
